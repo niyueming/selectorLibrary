@@ -209,7 +209,7 @@ public class ImageSelectorActivity extends AppCompatActivity implements LoaderMa
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         Uri uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         String select = MediaStore.Images.Media.SIZE + ">0";
-        return new CursorLoader(this, uri, IMAGE_PROJECTION, select, null, MediaStore.Images.Media.DISPLAY_NAME + " DESC");
+        return new CursorLoader(this, uri, IMAGE_PROJECTION, select, null, MediaStore.Images.Media.DATE_ADDED + " DESC");
     }
 
     @Override
